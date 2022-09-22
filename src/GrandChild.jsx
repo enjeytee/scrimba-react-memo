@@ -1,13 +1,10 @@
-import React, { PureComponent } from "react";
+import React from "react";
 
-class GrandChild extends PureComponent {
-    render() {
-        console.log("[ ]   [ ]   [ ]   [👶🏻] rendered")
-        return (
-                <div>
-                    <p>I'm a GrandChild Component</p>
-                </div>
-        );
-    };
-};
-export default GrandChild;
+export default React.memo(function GrandChild() {
+    console.log("[ ]   [ ]   [ ]   [👶🏻] rendered")
+    return (
+            <div>
+                <p>I'm a GrandChild Component</p>
+            </div>
+    );
+});

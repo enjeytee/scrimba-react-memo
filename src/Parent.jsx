@@ -1,16 +1,14 @@
 import React from "react";
 import Child from "./Child.jsx";
 
-class Parent extends React.PureComponent {
-    render() {
-        console.log("[ ]   [👩🏼‍⚕️]   [ ]   [ ] rendered");
-        return (
-            <div>
-                <p>I'm a Parent Component</p>
-                <Child />
-                <Child />
-            </div>
-        );
-    };
+function Parent(props) {
+    console.log("[ ]   [👩🏼‍⚕️]   [ ]   [ ] rendered");
+    return (
+        <div>
+            <p>I'm a Parent Component</p>
+            <Child count={props.count}/>
+            <Child />
+        </div>
+    );
 };
-export default Parent;
+export default React.memo(Parent);
